@@ -8,8 +8,9 @@ class EmailParser
   attr_accessor :emails
 
   def initialize(email_list)
+    binding.pry
     @emails = []
-    email_list.tr(',','').split(' ') do |item|
+    email_list.tr(',','').split(' ').each do |item|
       @emails << item
     end
     self.parse
